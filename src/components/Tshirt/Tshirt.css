@@ -1,0 +1,22 @@
+.tshirt {
+    border: 1px solid lightblue;
+    border-radius: 10px;
+    padding-bottom: 20px;
+}
+
+.tshirt img {
+    height: 250px;
+}
+
+.tshirt-btn {
+    padding: 10px;
+    background-color: rgb(247, 141, 141);
+    border-radius: 10px;
+    border: none;
+}
+
+.tshirt-btn:hover {
+    background-color: rgb(145, 145, 145);
+    color: rgb(255, 255, 255);
+    border: none;
+}
