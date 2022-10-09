@@ -20,12 +20,17 @@ const Home = () => {
         }
 
     }
+
+    const handleRemoveItem = tshirt => {
+        const remaining = cart.filter(ts => ts._id !== tshirt._id);
+        setCart(remaining);
+    }
     return (
         <div className='home-container'>
             <div className="tshirt-container">
                 {
                     tshirts.map(tshirt => <Tshirt
-                        key={tshirt.id}
+                        key={tshirt._id}
                         tshirt={tshirt}
                         handleAddTocart={handleAddTocart}
                     >
@@ -33,7 +38,9 @@ const Home = () => {
                 }
             </div>
             <div className="cart-container">
-                <Cart cart={cart}></Cart>
+                <Cart cart={cart}
+                    handleRemoveItem={handleRemoveItem}
+                ></Cart>
             </div>
         </div>
     );
