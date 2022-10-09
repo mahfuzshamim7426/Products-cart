@@ -1,4 +1,5 @@
 import React from 'react';
+import './Cart.css';
 
 const Cart = ({ cart, handleRemoveItem }) => {
     let message;
@@ -16,8 +17,8 @@ const Cart = ({ cart, handleRemoveItem }) => {
     }
     return (
         <div>
-            <h2>This is cart</h2>
-            <h2>Order Quantity: {cart.length}</h2>
+            <h2 className={cart.length === 2 ? 'Orange' : 'Blue'}>Order Summary</h2>
+            <h2 className={`bold ${cart.length == 2 ? 'Green' : 'Yellow'}`}>Order Quantity: {cart.length}</h2>
             {
                 cart.map(tshirt => <p
                     key={tshirt._id}
@@ -29,6 +30,11 @@ const Cart = ({ cart, handleRemoveItem }) => {
             {
                 message
             }
+            {cart.length === 3 ? <p>Added 3 items</p> : <p>You can Add More items</p>}
+            <p>and operator</p>
+            {cart.length === 2 && <p>Added 2 items</p>}
+            <p>Or operator</p>
+            {cart.length === 4 || <p>this is not 4 items</p>}
         </div>
     );
 };
@@ -36,5 +42,8 @@ const Cart = ({ cart, handleRemoveItem }) => {
 export default Cart;
 /*
 Conditional Rendering
-1.use Element if-else
+1.use Element in variable adn then use if-else to set values
+2.ternary operation conditions ? true:false.
+3.&& Operator(if conditions is true)
+4.|| operator (if conditions is false)
 */
