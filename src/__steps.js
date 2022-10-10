@@ -9,3 +9,13 @@ Basic Router Setup
 7.set children routes
 8.set link on the Header components
 */
+
+
+/*
+1.Declare a context
+2.set provider with value
+3.useContext in the place where you want to get the  context
+4.
+
+
+*/
